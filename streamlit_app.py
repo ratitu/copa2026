@@ -55,7 +55,7 @@ st.markdown("""
 FLAGS = {
     "México": "🇲🇽", "África do Sul": "🇿🇦", "Coreia do Sul": "🇰🇷", "República Tcheca": "🇨🇿",
     "Canadá": "🇨🇦", "Bósnia e Herzegovina": "🇧🇦", "Catar": "🇶🇦", "Suíça": "🇨🇭",
-    "Brasil": "🇧🇷", "Marrocos": "🇲🇦", "Haiti": "🇭🇹", "Escócia": "🏴",
+    "Brasil": "🇧🇷", "Marrocos": "🇲🇦", "Haiti": "🇭🇹", "Escócia": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
     "Estados Unidos": "🇺🇸", "Paraguai": "🇵🇾", "Austrália": "🇦🇺", "Turquia": "🇹🇷",
     "Alemanha": "🇩🇪", "Curaçao": "🇨🇼", "Costa do Marfim": "🇨🇮", "Equador": "🇪🇨",
     "Holanda": "🇳🇱", "Japão": "🇯🇵", "Suécia": "🇸🇪", "Tunísia": "🇹🇳",
@@ -64,7 +64,7 @@ FLAGS = {
     "França": "🇫🇷", "Senegal": "🇸🇳", "Iraque": "🇮🇶", "Noruega": "🇳🇴",
     "Argentina": "🇦🇷", "Argélia": "🇩🇿", "Áustria": "🇦🇹", "Jordânia": "🇯🇴",
     "Portugal": "🇵🇹", "RD Congo": "🇨🇩", "Uzbequistão": "🇺🇿", "Colômbia": "🇨🇴",
-    "Inglaterra": "🏴", "Croácia": "🇭🇷", "Gana": "🇬🇭", "Panamá": "🇵🇦",
+    "Inglaterra": "🏴󠁧󠁢󠁥󠁮󠁧󠁿", "Croácia": "🇭🇷", "Gana": "🇬🇭", "Panamá": "🇵🇦",
 }
 
 GROUPS = {
@@ -221,11 +221,11 @@ with tabs[0]:
             with cols[0]:
                 st.markdown(f"<div style='text-align:right; font-size:14px;'>{flag(h)}</div>", unsafe_allow_html=True)
             with cols[1]:
-                gh = st.number_input("  ", key=f"gh_{key}", value=r[0] if r else 0, min_value=0, max_value=20, label_visibility="collapsed")
+                gh = st.number_input("C", key=f"gh_{key}", value=r[0] if r else 0, min_value=0, max_value=20, label_visibility="collapsed")
             with cols[2]:
                 st.markdown("<div style='text-align:center; color:#666; padding-top:6px;'>×</div>", unsafe_allow_html=True)
             with cols[3]:
-                ga = st.number_input("  ", key=f"ga_{key}", value=r[1] if r else 0, min_value=0, max_value=20, label_visibility="collapsed")
+                ga = st.number_input("F", key=f"ga_{key}", value=r[1] if r else 0, min_value=0, max_value=20, label_visibility="collapsed")
             with cols[4]:
                 st.markdown(f"<div style='text-align:left; font-size:14px;'>{flag(a)} <span style='color:#666; font-size:11px;'>{date_label}</span></div>", unsafe_allow_html=True)
             if r is None and (gh > 0 or ga > 0):
@@ -248,11 +248,11 @@ with tabs[1]:
             with cols[0]:
                 st.markdown(f"<div style='text-align:right; font-size:14px;'>{flag(h)}</div>", unsafe_allow_html=True)
             with cols[1]:
-                gh = st.number_input("  ", key=f"gh_{key}", value=r[0] if r else 0, min_value=0, max_value=20, label_visibility="collapsed")
+                gh = st.number_input("C", key=f"gh_{key}", value=r[0] if r else 0, min_value=0, max_value=20, label_visibility="collapsed")
             with cols[2]:
                 st.markdown("<div style='text-align:center; color:#666; padding-top:6px;'>×</div>", unsafe_allow_html=True)
             with cols[3]:
-                ga = st.number_input("  ", key=f"ga_{key}", value=r[1] if r else 0, min_value=0, max_value=20, label_visibility="collapsed")
+                ga = st.number_input("F", key=f"ga_{key}", value=r[1] if r else 0, min_value=0, max_value=20, label_visibility="collapsed")
             with cols[4]:
                 st.markdown(f"<div style='text-align:left; font-size:14px;'>{flag(a)} <span style='color:#666; font-size:11px;'>{date_label}</span></div>", unsafe_allow_html=True)
             if r is None and (gh > 0 or ga > 0):
@@ -275,11 +275,11 @@ with tabs[2]:
             with cols[0]:
                 st.markdown(f"<div style='text-align:right; font-size:14px;'>{flag(h)}</div>", unsafe_allow_html=True)
             with cols[1]:
-                gh = st.number_input("  ", key=f"gh_{key}", value=r[0] if r else 0, min_value=0, max_value=20, label_visibility="collapsed")
+                gh = st.number_input("C", key=f"gh_{key}", value=r[0] if r else 0, min_value=0, max_value=20, label_visibility="collapsed")
             with cols[2]:
                 st.markdown("<div style='text-align:center; color:#666; padding-top:6px;'>×</div>", unsafe_allow_html=True)
             with cols[3]:
-                ga = st.number_input("  ", key=f"ga_{key}", value=r[1] if r else 0, min_value=0, max_value=20, label_visibility="collapsed")
+                ga = st.number_input("F", key=f"ga_{key}", value=r[1] if r else 0, min_value=0, max_value=20, label_visibility="collapsed")
             with cols[4]:
                 st.markdown(f"<div style='text-align:left; font-size:14px;'>{flag(a)} <span style='color:#666; font-size:11px;'>{date_label}</span></div>", unsafe_allow_html=True)
             if r is None and (gh > 0 or ga > 0):
@@ -341,7 +341,7 @@ with tabs[4]:
         st.info("Complete todos os jogos da fase de grupos para simular o mata-mata.")
     else:
         third_ranked = get_third_placed_ranking()
-        best_third_map = {g: t for g, t, _, _, _, _ in third_ranked[:8]}
+        qualified_third = {g: t for g, t, _, _, _, _ in third_ranked[:8]}
 
         group_winners = {}
         group_runners = {}
@@ -350,65 +350,60 @@ with tabs[4]:
             group_winners[grp] = ordered[0]
             group_runners[grp] = ordered[1]
 
-        def get_third(g):
-            return best_third_map.get(g)
+        def best_third_from(groups):
+            for g, t, _, _, _, _ in third_ranked:
+                if g in groups and g in qualified_third:
+                    return t
+            return None
 
-        bracket = [
-            ("Oitavas A", group_winners.get("A", "?"), get_third("C") or get_third("D") or get_third("E") or "3° C/D/E"),
-            ("Oitavas B", group_winners.get("D", "?"), get_third("B") or get_third("E") or get_third("F") or "3° B/E/F"),
-            ("Oitavas C", group_winners.get("B", "?"), get_third("A") or get_third("C") or get_third("D") or "3° A/C/D"),
-            ("Oitavas D", group_winners.get("C", "?"), get_third("A") or get_third("B") or get_third("F") or "3° A/B/F"),
-            ("Oitavas E", group_runners.get("B", "?"), group_runners.get("C", "?")),
-            ("Oitavas F", group_runners.get("A", "?"), group_runners.get("D", "?")),
-            ("Oitavas G", group_winners.get("E", "?"), group_runners.get("F", "?")),
-            ("Oitavas H", group_winners.get("F", "?"), group_runners.get("E", "?")),
-            ("Oitavas I", group_winners.get("G", "?"), group_runners.get("H", "?")),
-            ("Oitavas J", group_winners.get("H", "?"), group_runners.get("G", "?")),
-            ("Oitavas K", group_winners.get("I", "?"), group_runners.get("J", "?")),
-            ("Oitavas L", group_winners.get("J", "?"), group_runners.get("I", "?")),
-            ("Oitavas M", group_winners.get("K", "?"), group_runners.get("L", "?")),
-            ("Oitavas N", group_winners.get("L", "?"), group_runners.get("K", "?")),
-            ("Oitavas O", "1° melhor grupo", "3° place"),
-            ("Oitavas P", "1° melhor grupo", "3° place"),
+        KO_MATCHES = [
+            ("73", group_runners["A"], group_runners["B"]),
+            ("74", group_winners["E"], best_third_from({"A","B","C","D","F"})),
+            ("75", group_winners["F"], group_runners["C"]),
+            ("76", group_winners["C"], group_runners["F"]),
+            ("77", group_winners["I"], best_third_from({"C","D","F","G","H"})),
+            ("78", group_runners["E"], group_runners["I"]),
+            ("79", group_winners["A"], best_third_from({"C","E","F","H","I"})),
+            ("80", group_winners["L"], best_third_from({"E","H","I","J","K"})),
+            ("81", group_winners["D"], best_third_from({"B","E","F","I","J"})),
+            ("82", group_winners["G"], best_third_from({"A","E","H","I","J"})),
+            ("83", group_runners["K"], group_runners["L"]),
+            ("84", group_winners["H"], group_runners["J"]),
+            ("85", group_winners["B"], best_third_from({"E","F","G","I","J"})),
+            ("86", group_winners["J"], group_runners["H"]),
+            ("87", group_winners["K"], best_third_from({"D","E","I","J","L"})),
+            ("88", group_runners["D"], group_runners["G"]),
         ]
 
-        st.markdown("### Oitavas de Final")
-        oitavas_cols = st.columns(4)
-        KO_MATCHES = {
-            "R32_0": (group_winners.get("A", "?"), "3° C/D/E"),
-            "R32_1": (group_winners.get("D", "?"), "3° B/E/F"),
-            "R32_2": (group_winners.get("B", "?"), "3° A/C/D"),
-            "R32_3": (group_winners.get("C", "?"), "3° A/B/F"),
-            "R32_4": (group_runners.get("B", "?"), group_runners.get("C", "?")),
-            "R32_5": (group_runners.get("A", "?"), group_runners.get("D", "?")),
-            "R32_6": (group_winners.get("E", "?"), group_runners.get("F", "?")),
-            "R32_7": (group_winners.get("F", "?"), group_runners.get("E", "?")),
-            "R32_8": (group_winners.get("G", "?"), group_runners.get("H", "?")),
-            "R32_9": (group_winners.get("H", "?"), group_runners.get("G", "?")),
-            "R32_10": (group_winners.get("I", "?"), group_runners.get("J", "?")),
-            "R32_11": (group_winners.get("J", "?"), group_runners.get("I", "?")),
-            "R32_12": (group_winners.get("K", "?"), group_runners.get("L", "?")),
-            "R32_13": (group_winners.get("L", "?"), group_runners.get("K", "?")),
-            "R32_14": ("1° melhor", "3°"),
-            "R32_15": ("1° melhor", "3°"),
-        }
-
-        for i, (k, (t1, t2)) in enumerate(KO_MATCHES.items()):
-            col = oitavas_cols[i % 4]
-            with col:
-                r = st.session_state.knockout.get(k)
-                g1 = st.number_input("  ", key=f"ko_h_{k}", value=r[0] if r else 0, min_value=0, max_value=20, label_visibility="collapsed")
-                g2 = st.number_input("  ", key=f"ko_a_{k}", value=r[1] if r else 0, min_value=0, max_value=20, label_visibility="collapsed")
-                st.markdown(f"<div style='font-size:12px; color:#888; margin:-8px 0 4px 0;'>{flag(t1)} × {flag(t2)}</div>", unsafe_allow_html=True)
-                if r is None and (g1 > 0 or g2 > 0):
-                    st.session_state.knockout[k] = (g1, g2)
-                elif r is not None:
-                    st.session_state.knockout[k] = (g1, g2)
+        st.markdown("### ⚽ Oitavas de Final (16 avos)")
+        for i in range(0, 16, 4):
+            cols = st.columns(4)
+            for j in range(4):
+                if i + j >= len(KO_MATCHES):
+                    continue
+                num, t1, t2 = KO_MATCHES[i + j]
+                key = f"R32_{num}"
+                r = st.session_state.knockout.get(key)
+                with cols[j]:
+                    st.markdown(f"**Jogo {num}**")
+                    col_a, col_b = st.columns(2)
+                    with col_a:
+                        gh = st.number_input("C", key=f"gh_{key}", value=r[0] if r else 0, min_value=0, max_value=20, label_visibility="collapsed")
+                    with col_b:
+                        ga = st.number_input("F", key=f"ga_{key}", value=r[1] if r else 0, min_value=0, max_value=20, label_visibility="collapsed")
+                    t1_name = t1 if t1 else "?"
+                    t2_name = t2 if t2 else "?"
+                    st.markdown(f"<div style='font-size:12px; line-height:1.8;'>{flag(t1_name)}<br>{flag(t2_name)}</div>", unsafe_allow_html=True)
+                    if r is None and (gh > 0 or ga > 0):
+                        st.session_state.knockout[key] = (gh, ga)
+                    elif r is not None:
+                        st.session_state.knockout[key] = (gh, ga)
 
         if st.button("🎲 Simular Mata-mata", use_container_width=True):
-            for k in KO_MATCHES:
+            for num, _, _ in KO_MATCHES:
+                key = f"R32_{num}"
                 g1, g2 = random_score(), random_score()
                 if g1 == g2:
                     g1 += 1
-                st.session_state.knockout[k] = (g1, g2)
+                st.session_state.knockout[key] = (g1, g2)
             st.rerun()
