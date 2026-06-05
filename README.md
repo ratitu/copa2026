@@ -1,19 +1,27 @@
-# 🎈 Blank app template
+# 🏆 Copa do Mundo FIFA 2026 — Simulador
 
-A simple Streamlit app template for you to modify!
+App interativo em **Streamlit** que exibe a tabela da Copa do Mundo 2026 (Canadá, México e EUA) e permite simular os resultados da fase de grupos e mata-mata.
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://blank-app-template.streamlit.app/)
+## Funcionalidades
 
-### How to run it on your own machine
+- **12 grupos** (A–L) com as 48 seleções
+- **72 jogos** da fase de grupos com datas oficiais
+- **Tabelas dinâmicas** — classificação (P, J, V, E, D, GP, GC, SG) é recalculada a cada alteração de placar
+- **Inserção manual** de resultados jogo a jogo
+- **Simulação automática** com distribuição realista de gols
+- **Classificação geral** com ranking de todos os times e os 8 melhores terceiros colocados
+- **Fase eliminatória** — 32 avos (oitavas) com simulação
+- **Tema escuro** com código de cores (verde = classificado, vermelho = eliminado)
 
-1. Install the requirements
+## Como usar
 
-   ```
-   $ pip install -r requirements.txt
-   ```
+```bash
+pip install -r requirements.txt
+streamlit run app.py
+```
 
-2. Run the app
+O app abre em `http://localhost:8501`.
 
-   ```
-   $ streamlit run streamlit_app.py
-   ```
+## Dados
+
+Grupos e times baseados no sorteio oficial da FIFA para a Copa do Mundo de 2026.
