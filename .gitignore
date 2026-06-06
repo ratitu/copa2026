@@ -1,4 +1,5 @@
 .streamlit/secrets.toml
+resultados_copa2026.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

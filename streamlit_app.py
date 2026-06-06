@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 import random
+import json
+import os
 
 st.set_page_config(page_title="Copa do Mundo FIFA 2026", layout="wide")
 
@@ -105,11 +107,19 @@ for grp in GROUPS:
         (t[0], t[3]), (t[1], t[2]),
     ]
 
+SALVAR_PATH = os.path.join(os.path.dirname(__file__), "resultados_copa2026.json")
+
 if "results" not in st.session_state:
     st.session_state.results = {}
     for grp in GROUPS:
         for i in range(6):
             st.session_state.results[f"{grp}_{i}"] = None
+    if os.path.exists(SALVAR_PATH):
+        try:
+            with open(SALVAR_PATH) as f:
+                carregar_resultados(f.read())
+        except Exception:
+            pass
 
 if "knockout" not in st.session_state:
     st.session_state.knockout = {}
@@ -180,6 +190,25 @@ def reset_all():
             st.session_state.results[f"{grp}_{i}"] = None
     st.session_state.knockout = {}
 
+def serializar_resultados():
+    data = {}
+    data["results"] = {k: list(v) for k, v in st.session_state.results.items() if v is not None}
+    data["knockout"] = {k: list(v) for k, v in st.session_state.knockout.items() if v is not None}
+    return json.dumps(data, ensure_ascii=False, indent=2)
+
+def carregar_resultados(conteudo):
+    data = json.loads(conteudo)
+    for grp in GROUPS:
+        for i in range(6):
+            key = f"{grp}_{i}"
+            if key in data.get("results", {}):
+                st.session_state.results[key] = tuple(data["results"][key])
+            else:
+                st.session_state.results[key] = None
+    st.session_state.knockout = {}
+    for key, val in data.get("knockout", {}).items():
+        st.session_state.knockout[key] = tuple(val)
+
 # ========================= UI =========================
 
 st.title("🏆 Copa do Mundo FIFA 2026 — Simulador")
@@ -192,6 +221,15 @@ with col1:
 with col2:
     if st.button("🔄 Resetar Tudo", use_container_width=True):
         reset_all()
+with col3:
+    uploaded = st.file_uploader("📂 Carregar", type="json", label_visibility="collapsed")
+    if uploaded is not None:
+        carregar_resultados(uploaded.read().decode("utf-8"))
+        st.rerun()
+with col4:
+    resultados_json = serializar_resultados()
+    st.download_button("💾 Salvar", data=resultados_json, file_name="resultados_copa2026.json",
+                       mime="application/json", use_container_width=True)
 
 st.divider()
 
@@ -407,3 +445,13 @@ with tabs[4]:
                     g1 += 1
                 st.session_state.knockout[key] = (g1, g2)
             st.rerun()
+
+# Auto-salvar sempre que houver mudancas
+novo_snapshot = serializar_resultados()
+if "snapshot" not in st.session_state or st.session_state.snapshot != novo_snapshot:
+    st.session_state.snapshot = novo_snapshot
+    try:
+        with open(SALVAR_PATH, "w") as f:
+            f.write(novo_snapshot)
+    except Exception:
+        pass
